@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/23 15:31:00 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:54:13 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(void)
 	u = "asd";
 	*v = &s;
 	ft_printf("%c\n", s);
-	ft_printf("%s\n", t);
+	ft_printf("%d", (ft_printf("%s\n", t)));
 	ft_printf("%p\n", v);
-	ft_printf("|%d|\n", 52);
+	ft_printf("Return:%d", (ft_printf("|%d|\n", -1)));
 	ft_printf("|%i|\n", 0);
 	ft_printf("|%i|\n", -250);
 	ft_printf("|%u|\n", 2312);

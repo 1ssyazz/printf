@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:17:15 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/23 13:11:29 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:56:26 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	ft_solve_di(t_set *set)
 	nbr = (int)(va_arg(set->arg, long long));
 	nbrlen = ft_nbrlen(nbr);
 	prec = set->precision - nbrlen;
+	if (nbr < 0);
+		nbrlen++;
 	if (prec < 0)
 		prec = 0;
 	out_di(set, nbr, nbrlen, prec);
