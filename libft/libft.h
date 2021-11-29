@@ -29,5 +29,6 @@ void	ft_putnchar(char c, int n);
 char	*ft_strcpy(char *dst, char *src);
 size_t	ft_strlen(const char *str);
 int		ft_nbrlen(long long nbr);
+int		ft_atoi(const char *str);
 
 #endif

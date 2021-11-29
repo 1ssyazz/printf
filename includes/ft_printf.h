@@ -39,9 +39,9 @@ typedef struct s_set
 {
 	const char		*format;
 	va_list			arg;
+	char			flag[2];
 	int				width;
 	int				precision;
-	char			flag[2];
 	int				point;
 	int				total_len;
 }					t_set;
@@ -56,6 +56,8 @@ void				ft_solve_hex(t_set *set);
 void				ft_solve_per(t_set *set);
 
 void				ft_settings(t_set *set);
+void				ft_flag(t_set *set);
+void				ft_width(t_set *set);
 
 typedef void		t_formatter(t_set *set);
 int					ft_select_format(t_set *set);

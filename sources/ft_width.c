@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_settings.c                                      :+:      :+:    :+:   */
+/*   ft_width.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 14:41:54 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/29 16:58:11 by msukri           ###   ########.fr       */
+/*   Created: 2021/11/29 17:04:29 by msukri            #+#    #+#             */
+/*   Updated: 2021/11/29 17:36:11 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_settings(t_set *set)
+void	ft_width(t_set *set)
 {
-	int					number;
-	static t_formatter	*functions_array[7] = {
-	[e_char] = ft_solve_char,
-	[e_string] = ft_solve_string,
-	[e_pointer] = ft_solve_pointer,
-	[e_decimal_int] = ft_solve_di,
-	[e_u_dec_int] = ft_solve_uint,
-	[e_u_hex_int] = ft_solve_hex,
-	[e_percentage] = ft_solve_per};
-
-	set->format++;
-	ft_flag(set);
-	ft_width(set);
-	number = ft_select_format(set);
-	functions_array[number](set);
+	set->width = 0;
+	if (*set->format == '*')
+	{
+		set->width = va_arg(set->arg, int);
+		if (set->width < 0)
+		{
+			set->width = set->width * -1;
+			set->flag[e_minus] = '1';
+		}
+		set->format++;
+	}
+	if (*set->format >= '0' && *set->format <= '9')
+		set->width = ft_atoi(set->format);
+	while (*set->format >= '0' && *set->format <= '9')
+		set->format++;
 }
