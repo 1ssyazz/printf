@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/30 20:24:31 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/30 21:17:29 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,18 @@ int	main(void)
 	printf("  LENGTH printf : %d\n", (printf("|%-4.3d|", 32)));
 	ft_printf("Return:%d\n", (ft_printf("|%d|", -1)));
 	ft_printf("Unsigned\n");
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%u|", 0)));
-	printf("  LENGTH printf : %d\n", (printf("|%.0d|", 2312)));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-6.3u|", 32)));
+	printf("  LENGTH printf : %d\n", (printf("|%-6.3d|", 2312)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.0u|", 0)));
 	printf("  LENGTH printf : %d\n", (printf("|%5.0d|", 2312)));
-	ft_printf("|%u|\n", -2312);
-	ft_printf("|%x|\n", 231212);
-	ft_printf("|%X|\n", 231212);
+	ft_printf("Hexadecimal\n");
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%010x|", 2312)));
+	printf("  LENGTH printf : %d\n", (printf("|%10.6x|", 2312)));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%010x|", 0)));
+	printf("  LENGTH printf : %d\n", (printf("|%10.0x|", 0)));
+	ft_printf("|%10.6x|\n", 2312);
+	ft_printf("|%x|\n", 2312);
+	ft_printf("|%X|\n", 2312);
 	ft_printf("%%%%\n");
 	return (0);
 }
