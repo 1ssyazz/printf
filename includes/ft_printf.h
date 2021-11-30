@@ -58,6 +58,7 @@ void				ft_solve_per(t_set *set);
 void				ft_settings(t_set *set);
 void				ft_flag(t_set *set);
 void				ft_width(t_set *set);
+void				ft_precision(t_set *set);
 
 typedef void		t_formatter(t_set *set);
 int					ft_select_format(t_set *set);

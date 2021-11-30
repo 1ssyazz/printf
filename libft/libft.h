@@ -30,5 +30,6 @@ char	*ft_strcpy(char *dst, char *src);
 size_t	ft_strlen(const char *str);
 int		ft_nbrlen(long long nbr);
 int		ft_atoi(const char *str);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
 
 #endif

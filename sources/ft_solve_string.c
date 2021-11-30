@@ -6,11 +6,30 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:01:19 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/22 14:37:38 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/29 21:25:36 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+static void	str_width(t_set *set, int strlen)
+{
+	if (set->width > strlen)
+	{
+		set->total_len = set->total_len + (set->width - strlen);
+		while (--set->width > strlen)
+			ft_putchar(' ');
+	}
+}
+
+static void	out_str(t_set *set, char *str, int strlen)
+{
+	if (set->flag[e_minus] == '1' && set->point != 1)
+		ft_putstr(str);
+	str_width(set, strlen);
+	if (set->flag[e_minus] != '1' && set->point != 1)
+		ft_putstr(str);
+}
 
 void	ft_solve_string(t_set *set)
 {
@@ -21,10 +40,21 @@ void	ft_solve_string(t_set *set)
 	tmp = va_arg(set->arg, char *);
 	if (tmp == NULL)
 		tmp = "(null)";
-	str = ft_strnew(ft_strlen(tmp));
-	ft_strcpy(str, tmp);
-	strlen = ft_strlen(str);
-	ft_putstr(str);
+	if (set->precision == 0)
+	{
+		str = ft_strnew(ft_strlen(tmp));
+		ft_strcpy(str, tmp);
+	}
+	else
+	{
+		str = ft_strnew(ft_strlen(tmp));
+		ft_strncpy(str, tmp, set->precision);
+	}
+	if (set->point == 1)
+		strlen = 0;
+	else
+		strlen = ft_strlen(str);
+	out_str(set, str, strlen);
 	set->total_len = set->total_len + strlen;
 	set->format++;
 	free(str);

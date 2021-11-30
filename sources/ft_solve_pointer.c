@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:29:28 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/22 20:04:44 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/30 08:31:16 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,32 @@ static void	ptr_hex(unsigned long long addr)
 	}
 }
 
-static void	out_ptr(t_set *set, unsigned long long addr, int prec)
+static void	ptr_width(t_set *set, int addrlen, int prec)
 {
-	if (set->flag[e_minus] != '1' && (set->flag[e_zero] != 1 || prec != 0))
+	if (set->width > addrlen && set->width > set->precision)
+	{
+		set->total_len = set->total_len + set->width - addrlen;
+		set->width++;
+		if (set->flag[e_minus] != '1' && set->flag[e_zero] == '1' && prec != 0)
+			while (--set->width > addrlen)
+				ft_putchar('0');
+		else
+			while (--set->width > addrlen + prec)
+				ft_putchar(' ');
+	}
+}
+
+static void	out_ptr(t_set *set, unsigned long long addr, int addrlen, int prec)
+{
+	if (set->flag[e_minus] == '1' || (set->flag[e_zero] == '1' && prec == 0))
+	{
+		ft_putstr("0x");
+		ft_putnchar('0', prec);
+	}
+	if (set->flag[e_minus] == '1' && (addr != 0 && set->point != 1))
+		ptr_hex(addr);
+	ptr_width(set, addrlen, prec);
+	if (set->flag[e_minus] != '1' && (set->flag[e_zero] != '1' || prec != 0))
 	{
 		ft_putstr("0x");
 		if (addr == 0 && set->point != 1)
@@ -61,7 +84,9 @@ void	ft_solve_pointer(t_set *set)
 	prec = set->precision - addrlen + 2;
 	if (prec < 0)
 		prec = 0;
-	out_ptr(set, addr, prec);
+	if (prec != 0 && set->width <= set->precision)
+		set->total_len = set->total_len + prec;
+	out_ptr(set, addr, addrlen, prec);
 	set->total_len = set->total_len + addrlen;
 	set->format++;
 }

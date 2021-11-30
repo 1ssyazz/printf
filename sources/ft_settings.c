@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:41:54 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/29 16:58:11 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/29 21:34:25 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_settings(t_set *set)
 	set->format++;
 	ft_flag(set);
 	ft_width(set);
+	ft_precision(set);
 	number = ft_select_format(set);
 	functions_array[number](set);
 }
