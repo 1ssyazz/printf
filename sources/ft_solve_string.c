@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:01:19 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/29 21:25:36 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/30 12:14:37 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ static void	str_width(t_set *set, int strlen)
 	if (set->width > strlen)
 	{
 		set->total_len = set->total_len + (set->width - strlen);
-		while (--set->width > strlen)
+		while (set->width > strlen)
+		{
 			ft_putchar(' ');
+			set->width--;
+		}
 	}
 }
 
