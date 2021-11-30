@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/30 12:05:31 by msukri           ###   ########.fr       */
+/*   Updated: 2021/11/30 12:56:49 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	main(void)
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%05c| |%-5c|", s, s)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%s|", t)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%1s|", "")));
-	printf("  LENGTH ft_printf : %d\n", (printf("|%1s|", "")));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-1p|", 0)));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-1p|", 0)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.2s| |%15.9s|", t, t)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.s|", t)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%p|", v)));
