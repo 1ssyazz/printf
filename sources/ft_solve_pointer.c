@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:29:28 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/30 13:22:54 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 14:45:06 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static void	ptr_width(t_set *set, int addrlen, int prec)
 		set->total_len = set->total_len + set->width - addrlen;
 		set->width++;
 		if (set->flag[e_minus] != '1' && set->flag[e_zero] == '1' && prec != 0)
-			while (--set->width > addrlen)
-				ft_putchar('0');
+			while (--set->width > addrlen + prec)
+				ft_putchar(' ');
 		else
 			while (--set->width > addrlen + prec)
 				ft_putchar(' ');

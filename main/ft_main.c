@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/12/01 13:51:47 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 14:14:45 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	main(void)
 	ft_printf("%c\n", s);
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%05c| |%-5c|", s, s)));
 	ft_printf("String\n");
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%s|", t)));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-020s|", t)));
+	printf("  LENGTH printf : %d\n", (printf("|%20s|", t)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%1s|", "")));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%6.9s|", t)));
 	printf("  LENGTH printf : %d\n", (printf("|%6.9s|", t)));
@@ -58,6 +59,7 @@ int	main(void)
 	ft_printf("|%10.6x|\n", 2312);
 	ft_printf("|%x|\n", 2312);
 	ft_printf("|%X|\n", 2312);
+	ft_printf("Percent\n");
 	ft_printf("|%%|\n");
 	ft_printf("|%-02%|\n");
 	return (0);

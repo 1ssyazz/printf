@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:01:19 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/30 12:14:37 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 14:12:41 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	str_width(t_set *set, int strlen)
 	}
 }
 
-static void	out_str(t_set *set, char *str, int strlen)
+static void	out_strflag(t_set *set, char *str, int strlen)
 {
 	if (set->flag[e_minus] == '1' && set->point != 1)
 		ft_putstr(str);
@@ -57,7 +57,7 @@ void	ft_solve_string(t_set *set)
 		strlen = 0;
 	else
 		strlen = ft_strlen(str);
-	out_str(set, str, strlen);
+	out_strflag(set, str, strlen);
 	set->total_len = set->total_len + strlen;
 	set->format++;
 	free(str);
