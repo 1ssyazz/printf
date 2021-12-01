@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:01:19 by msukri            #+#    #+#             */
-/*   Updated: 2021/12/01 15:23:26 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 15:41:01 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_solve_string(t_set *set)
 	}
 	else
 	{
-		str = ft_strnew(ft_strlen(tmp));
+		str = ft_strnew(set->precision);
 		ft_strncpy(str, tmp, set->precision);
 	}
 	if (set->point == 1)
