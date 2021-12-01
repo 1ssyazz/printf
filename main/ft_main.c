@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/12/01 15:36:37 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 16:00:16 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main(void)
 	ft_printf("String\n");
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.*s|", 20, t)));
 	printf("  LENGTH printf : %d\n", (printf("|%.*s|", 20, t)));
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%5.*s|", 7, strdup("okkkkkkkkkkkkkkkkk"))));
-	printf("  LENGTH printf : %d\n", (printf("|%5.*s|", 7, strdup("okkkkkkkkkkkkkkkkk"))));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.*s|", 222, "okkkkkkkkkkkkkkkkk")));
+	printf("  LENGTH printf : %d\n", (printf("|%.*s|", 222, "okkkkkkkkkkkkkkkkk")));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-020s|", t)));
 	printf("  LENGTH printf : %d\n", (printf("|%20s|", t)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%1s|", "")));
