@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:29:28 by msukri            #+#    #+#             */
-/*   Updated: 2021/12/01 14:45:06 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 16:39:02 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,12 @@ static void	out_ptr(t_set *set, unsigned long long addr, int addrlen, int prec)
 	if (set->flag[e_minus] == '1' && (addr != 0 || set->point != 1))
 		ptr_hex(addr);
 	ptr_width(set, addrlen, prec);
-	if (set->flag[e_minus] != '1' && (set->flag[e_zero] != '1' || prec != 0))
+	if (set->flag[e_minus] != '1' || (set->flag[e_zero] == '1' && prec != 0))
 	{
 		ft_putstr("0x");
-		if (addr == 0 && set->point != 1)
-			prec = 1;
 		ft_putnchar('0', prec);
 	}
-	if (set->flag[e_minus] != '1' && (addr != 0 && set->point != 1))
+	if (set->flag[e_minus] != '1' && (addr != 0 || set->point != 1))
 		ptr_hex(addr);
 }
 

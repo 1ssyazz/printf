@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/12/01 16:00:16 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 16:29:17 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main(void)
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.2s|", t)));
 	ft_printf("Pointer\n");
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%p|", v)));
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-1p|", 0)));
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%020.17p|", v)));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-.1p|", 0)));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.1p|", 0)));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-20.8p|", v)));
 	ft_printf("Decimal\n");
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.0d|", 0)));
