@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/11/30 21:17:29 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/01 13:51:47 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	main(void)
 	ft_printf("|%10.6x|\n", 2312);
 	ft_printf("|%x|\n", 2312);
 	ft_printf("|%X|\n", 2312);
-	ft_printf("%%%%\n");
+	ft_printf("|%%|\n");
+	ft_printf("|%-02%|\n");
 	return (0);
 }

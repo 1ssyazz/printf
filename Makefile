@@ -6,7 +6,7 @@
 #    By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/05 14:00:10 by epuclla           #+#    #+#              #
-#    Updated: 2021/11/22 20:06:56 by msukri           ###   ########.fr        #
+#    Updated: 2021/12/01 13:19:38 by msukri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,4 +44,4 @@ re: fclean all
 dclean: 
 	@/bin/rm -f *.out
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re dclean
