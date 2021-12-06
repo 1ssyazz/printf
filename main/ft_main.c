@@ -6,7 +6,7 @@
 /*   By: msukri <msukri@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:35:57 by msukri            #+#    #+#             */
-/*   Updated: 2021/12/01 21:57:16 by msukri           ###   ########.fr       */
+/*   Updated: 2021/12/02 20:46:07 by msukri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	main(void)
 	t = "HelloWorld";
 	u = "asd";
 	*v = &s;
-	ft_printf("Character\n");
-	ft_printf("|%0c|\n", s);
+	ft_printf("Character");
+	ft_printf("|%-d|\n", INT_MIN);
 	printf("|%c|\n", s);
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%05c| |%-5c|", s, s)));
+	ft_printf("  LENGTH ft_printf : %d\n\n\n\n\n", (ft_printf("|%12s| |%-12.1s| |%-12.5d|", t, t, 22)));
 	ft_printf("String\n");
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.*s|", 20, t)));
 	printf("  LENGTH printf : %d\n", (printf("|%.*s|", 20, t)));
-	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%.*s|", 222, "okkkkkkkkkkkkkkkkk")));
+	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("HAHAHAHA|%.*s|", 222, "okkkkkkkkkkkkkkkkk")));
 	printf("  LENGTH printf : %d\n", (printf("|%.*s|", 222, "okkkkkkkkkkkkkkkkk")));
 	ft_printf("  LENGTH ft_printf : %d\n", (ft_printf("|%-020s|", t)));
 	printf("  LENGTH printf : %d\n", (printf("|%20s|", t)));
